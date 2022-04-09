@@ -1,0 +1,15 @@
+.roadmap {
+  height: 10vh;
+  width: 4vw;
+  position: fixed;
+  top: 30rem;
+  left: 4rem;
+  border: 1px solid green;
+}
+
+.homeIcon {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
+/*# sourceMappingURL=index.module.css.map */

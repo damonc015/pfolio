@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAC;ECDb,MAAM,EDEQ,KAAK;ECDnB,KAAK,EDCgB,KAAK;EAC1B,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "index.module.scss",
+        "../../util/_variables.scss"
+    ],
+    "names": [],
+    "file": "index.module.css"
+}

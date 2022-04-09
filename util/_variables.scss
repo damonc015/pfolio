@@ -1,0 +1,29 @@
+@mixin size($height, $width) {
+  height: $height;
+  width: $width;
+}
+@mixin flex($j, $a, $d) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+@mixin transition($time){
+  transition: all $time ease-out;
+}
+
+$mainColor:#FF8B1F;
+$burntColor:#140A00;
+
+$backgroundColor: #182631;
+$backgroundColorContrast:#25323E;
+$backgroundColorGray:#3b4043;
+$backgroundColorTint: #3e4a57;
+$textColor: #CCC9D0;
+$textShadow: #7f828c;
+$shadowColor: #020b10;
+
+$titlefont: "Montserrat Alternates", sans-serif;
+$titlefontAlt: "Montserrat", sans-serif;
+$subTitlefont: "Overlock", cursive;
+$textFont: "Hind Guntur", sans-serif;

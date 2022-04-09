@@ -1,0 +1,119 @@
+@import "../util/variables";
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: $textColor;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $backgroundColor;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $textColor;
+  border-radius: 10px;
+  // border: 2px solid $backgroundColorContrast;
+}
+
+nav {
+  @include size(10vh, 100%);
+  @include flex(space-between, center, row);
+  font-family: $titlefont;
+  // background-color: $backgroundColorContrast;
+}
+nav ul {
+  @include size(100%, 40%);
+  @include flex(space-around, center, row);
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-right: 2rem;
+}
+nav li {
+  @include size(50%, 25%);
+  @include flex(center, center, row);
+  position: relative;
+  &:after {
+    content: "";
+    @include size(4px, 25%);
+    position: absolute;
+    bottom: 0;
+    background-color: $backgroundColorGray;
+    border-radius: 50%;
+    &:hover {
+      border: 1px solid red;
+    }
+  }
+}
+
+$headers: "A", "B", "C", "D", "E";
+@each $header in $headers {
+  .socialIconContainer#{$header} {
+    @include flex(flex-end, center, row);
+    @include size(3rem, 100%);
+    @include transition(0.3s);
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@each $header in $headers {
+  .socialIconIcon#{$header} {
+    @include flex(center, center, row);
+    @include size(100%, 15%);
+    font-size: 1.25rem;
+  }
+}
+@each $header in $headers {
+  .socialIconHeader#{$header} {
+    @include flex(center, center, row);
+    @include size(100%, auto);
+    font-size: 1.25rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.roadmapContainer {
+  @include size(auto, auto);
+  position: relative;
+}
+
+.test {
+  height: auto;
+  width: 40vw;
+  color: $textColor;
+  background-color: $backgroundColor;
+  font-family: $textFont;
+  transition: all 0.4s ease-out;
+  border: 1px solid green;
+  &:hover {
+    color: $mainColor;
+    animation: heat 15s ease-out forwards;
+  }
+}
+
+@keyframes heat {
+  0% {
+    color: $mainColor;
+  }
+  100% {
+    color: $burntColor;
+  }
+}

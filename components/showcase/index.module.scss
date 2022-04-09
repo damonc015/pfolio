@@ -1,0 +1,5 @@
+@import "../../util/variables";
+
+.showContainer{
+    @include size(100vh,100vw);
+}
