@@ -1,0 +1,90 @@
+@import "../../util/variables";
+
+#roadmap {
+  @include size(auto, 4vw);
+  @include flex(space-around, center, column);
+  position: fixed;
+  z-index: 10000;
+  top: 30%;
+  left: 4rem;
+  //   border: 1px solid red;
+  gap: 3rem;
+  &::after {
+    content: "";
+    @include size(95%, 0);
+    border: 1px solid $mainColor;
+    position: absolute;
+    z-index: 2000;
+  }
+}
+
+$roadmap_icons: "home", "about", "showcase", "contact";
+
+@each $roadmap_icon in $roadmap_icons {
+  .roadmapIcon#{$roadmap_icon} {
+    @include flex(center, center, row);
+    @include size(5rem, 100%);
+    @include transition(0.3s);
+    position: relative;
+    color: $textColor;
+    border-radius: 50%;
+    z-index: 9000;
+    background-color: $backgroundColorContrast;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover > .normalAnvil {
+      opacity: 0.3;
+    }
+    &:hover > .hitAnvil {
+      opacity: 0.3;
+    }
+  }
+}
+
+.roadmapText {
+  color: $textColor;
+  position: absolute;
+  transform: rotateZ(-35deg);
+}
+.hitAnvil {
+  font-size: 2rem;
+  animation: hittingAnvil 1.5s ease-out;
+  color: $mainColor;
+}
+
+.normalAnvil {
+  font-size: 1.5rem;
+}
+
+@keyframes hittingAnvil {
+  0% {
+    transform: rotateZ(0);
+    font-size: 1.25rem;
+  }
+  33% {
+    transform: rotateZ(-30deg);
+  }
+  66% {
+    transform: rotateZ(30deg);
+  }
+  100% {
+    transform: rotateZ(0);
+    font-size: 2rem;
+  }
+}
+// @each $roadmap_icon in $roadmap_icons {
+//   .socialIconIcon#{$roadmap_icon} {
+//     @include flex(center, center, row);
+//     @include size(100%, 15%);
+//     font-size: 1.25rem;
+//   }
+// }
+// @each $roadmap_icon in $roadmap_icons {
+//   .socialIconHeader#{$roadmap_icon} {
+//     @include flex(center, center, row);
+//     @include size(100%, auto);
+//     font-size: 1.25rem;
+//     padding-right: 0.5rem;
+//   }
+// }

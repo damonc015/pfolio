@@ -1,4 +1,9 @@
 @import "../util/variables";
+@import "./partials/nav";
+@import "./partials/socials";
+@import "./partials/roadmap";
+@import "./partials/showcase";
+
 html,
 body {
   padding: 0;
@@ -6,6 +11,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: $textColor;
+  overflow-x: hidden;
 }
 
 a {
@@ -30,69 +36,28 @@ a {
   // border: 2px solid $backgroundColorContrast;
 }
 
-nav {
-  @include size(10vh, 100%);
-  @include flex(space-between, center, row);
-  font-family: $titlefont;
-  // background-color: $backgroundColorContrast;
-}
-nav ul {
-  @include size(100%, 40%);
-  @include flex(space-around, center, row);
-  list-style-type: none;
-  padding-inline-start: 0;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  padding-right: 2rem;
-}
-nav li {
-  @include size(50%, 25%);
-  @include flex(center, center, row);
-  position: relative;
-  &:after {
-    content: "";
-    @include size(4px, 25%);
-    position: absolute;
-    bottom: 0;
-    background-color: $backgroundColorGray;
-    border-radius: 50%;
-    &:hover {
-      border: 1px solid red;
-    }
-  }
-}
-
-$headers: "A", "B", "C", "D", "E";
-@each $header in $headers {
-  .socialIconContainer#{$header} {
-    @include flex(flex-end, center, row);
-    @include size(3rem, 100%);
-    @include transition(0.3s);
+#container {
+  @include size(auto, 100vw);
+  background-color: $backgroundColor;
+  overflow-x: hidden;
+  & > * {
     position: relative;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
-@each $header in $headers {
-  .socialIconIcon#{$header} {
-    @include flex(center, center, row);
-    @include size(100%, 15%);
-    font-size: 1.25rem;
-  }
+#homeContainer {
+  @include size(100vh, 100vw);
 }
-@each $header in $headers {
-  .socialIconHeader#{$header} {
-    @include flex(center, center, row);
-    @include size(100%, auto);
-    font-size: 1.25rem;
-    padding-right: 0.5rem;
-  }
+#aboutContainer {
+  @include size(100vh, 100vw);
 }
-
-.roadmapContainer {
-  @include size(auto, auto);
-  position: relative;
+#showcaseContainer {
+  @include size(auto, 100vw);
+  @include flex(space-around, center, column);
+  border: 1px solid $mainColor;
+}
+#contactContainer {
+  @include size(100vh, 100vw);
+  @include flex(center, center, column);
 }
 
 .test {

@@ -1,0 +1,44 @@
+@import "../../util/variables";
+
+.socialContainer {
+  @include flex(center, center, column);
+  @include size(auto, 10vw);
+  position: fixed;
+  font-family: $titlefont;
+  right: 4rem;
+  bottom: 2rem;
+  z-index: 10000;
+}
+
+.socialIconContainerWrapper {
+  @include size(inherit, inherit);
+  opacity: 0;
+}
+
+$social_icons: "A", "B", "C", "D", "E";
+@each $social_icon in $social_icons {
+  .socialIconContainer#{$social_icon} {
+    @include flex(flex-end, center, row);
+    @include size(3rem, 100%);
+    @include transition(0.3s);
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@each $social_icon in $social_icons {
+  .socialIconIcon#{$social_icon} {
+    @include flex(center, center, row);
+    @include size(100%, 15%);
+    font-size: 1.25rem;
+  }
+}
+@each $social_icon in $social_icons {
+  .socialIconHeader#{$social_icon} {
+    @include flex(center, center, row);
+    @include size(100%, auto);
+    font-size: 1.25rem;
+    padding-right: 0.5rem;
+  }
+}

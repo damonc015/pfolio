@@ -1,28 +1,28 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap, hoverElement } from "../../util/gsap";
-import classes from "./index.module.scss";
+import Roadicon from "./roadIcon";
 
 const index = () => {
-  const iconRef = useRef();
-  const iconTime = useRef();
+  const roadTime = useRef();
+  const roadmapRef = useRef();
+  const [activeIcon, setActiveIcon] = useState();
 
   useEffect(() => {
-    iconTime.current = gsap.timeline();
-    // iconTime.current.pause();
-    iconTime.current.to(iconRef.current, {
-      duration: 5,
-      scrollTo: ".about_aboutContainer__SRyx6",
+    if (!activeIcon) return;
+    roadTime.current = gsap.timeline().to(window, {
+      duration: 1,
+      scrollTo: {
+        y: `#${activeIcon}Container`,
+        autokill: true,
+      },
     });
-  });
+  }, [activeIcon]);
   return (
-    <div className={classes.roadmap}>
-      <div
-        className={classes.homeIcon}
-        ref={iconRef}
-        // onClick={hoverElement(iconTime.current)}
-      >
-        aa
-      </div>
+    <div id="roadmap" ref={roadmapRef}>
+      <Roadicon page="home" current={activeIcon} isActive={setActiveIcon} />
+      <Roadicon page="about" current={activeIcon} isActive={setActiveIcon} />
+      <Roadicon page="showcase" current={activeIcon} isActive={setActiveIcon} />
+      <Roadicon page="contact" current={activeIcon} isActive={setActiveIcon} />
     </div>
   );
 };

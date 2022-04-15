@@ -8,7 +8,7 @@ const Contact = () => {
     e.preventDefault();
   };
   return (
-    <div id={classes.contactContainer}>
+    <div id="contactContainer">
       <div>
         <h2>Let's talk!</h2>
         <p>

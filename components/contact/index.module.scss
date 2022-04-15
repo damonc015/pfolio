@@ -5,10 +5,6 @@ $inputBorderRadius: 10px;
 $inputPadding: 1rem 2rem;
 $subContainerGap: 1rem;
 
-#contactContainer {
-  @include size(100vh, 100vw);
-  @include flex(center, center, column);
-}
 .formContainer {
   @include flex(center, center, column);
   @include size(auto, 50%);

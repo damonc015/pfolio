@@ -1,13 +1,14 @@
 import React from "react";
-import classes from "./index.module.scss"
 import Nav from "../nav";
 import Socials from "../socials";
+import Roadmap from "../roadmap";
 
 const Homepage = () => {
   return (
-    <div className={classes.homeContainer}>
+    <div id="homeContainer">
       <Nav />
-      <Socials/>
+      <Socials />
+      <Roadmap />
     </div>
   );
 };

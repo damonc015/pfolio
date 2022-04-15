@@ -1,34 +1,3 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: #CCC9D0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*::-webkit-scrollbar {
-  width: 6px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #182631;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #CCC9D0;
-  border-radius: 10px;
-}
-
 nav {
   height: 10vh;
   width: 100%;
@@ -104,6 +73,35 @@ nav li:after {
 
 nav li:after:hover {
   border: 1px solid red;
+}
+
+.socialContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  width: 10vw;
+  position: fixed;
+  font-family: "Montserrat Alternates", sans-serif;
+  right: 4rem;
+  bottom: 2rem;
+  z-index: 10000;
+}
+
+.socialIconContainerWrapper {
+  height: inherit;
+  width: inherit;
+  opacity: 0;
 }
 
 .socialIconContainerA {
@@ -426,10 +424,354 @@ nav li:after:hover {
   padding-right: 0.5rem;
 }
 
-.roadmapContainer {
+#roadmap {
   height: auto;
-  width: auto;
+  width: 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  z-index: 10000;
+  top: 30%;
+  left: 4rem;
+  gap: 3rem;
+}
+
+#roadmap::after {
+  content: "";
+  height: 95%;
+  width: 0;
+  border: 1px solid #FF8B1F;
+  position: absolute;
+  z-index: 2000;
+}
+
+.roadmapIconhome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 5rem;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   position: relative;
+  color: #CCC9D0;
+  border-radius: 50%;
+  z-index: 9000;
+  background-color: #25323E;
+}
+
+.roadmapIconhome:hover {
+  cursor: pointer;
+}
+
+.roadmapIconhome:hover > .normalAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconhome:hover > .hitAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconabout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 5rem;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  position: relative;
+  color: #CCC9D0;
+  border-radius: 50%;
+  z-index: 9000;
+  background-color: #25323E;
+}
+
+.roadmapIconabout:hover {
+  cursor: pointer;
+}
+
+.roadmapIconabout:hover > .normalAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconabout:hover > .hitAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconshowcase {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 5rem;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  position: relative;
+  color: #CCC9D0;
+  border-radius: 50%;
+  z-index: 9000;
+  background-color: #25323E;
+}
+
+.roadmapIconshowcase:hover {
+  cursor: pointer;
+}
+
+.roadmapIconshowcase:hover > .normalAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconshowcase:hover > .hitAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconcontact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 5rem;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  position: relative;
+  color: #CCC9D0;
+  border-radius: 50%;
+  z-index: 9000;
+  background-color: #25323E;
+}
+
+.roadmapIconcontact:hover {
+  cursor: pointer;
+}
+
+.roadmapIconcontact:hover > .normalAnvil {
+  opacity: 0.3;
+}
+
+.roadmapIconcontact:hover > .hitAnvil {
+  opacity: 0.3;
+}
+
+.roadmapText {
+  color: #CCC9D0;
+  position: absolute;
+  -webkit-transform: rotateZ(-35deg);
+          transform: rotateZ(-35deg);
+}
+
+.hitAnvil {
+  font-size: 2rem;
+  -webkit-animation: hittingAnvil 1.5s ease-out;
+          animation: hittingAnvil 1.5s ease-out;
+  color: #FF8B1F;
+}
+
+.normalAnvil {
+  font-size: 1.5rem;
+}
+
+@-webkit-keyframes hittingAnvil {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+    font-size: 1.25rem;
+  }
+  33% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+    font-size: 2rem;
+  }
+}
+
+@keyframes hittingAnvil {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+    font-size: 1.25rem;
+  }
+  33% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+    font-size: 2rem;
+  }
+}
+
+.projectWrapper {
+  height: 50vh;
+  width: 50vw;
+  background-color: gray;
+}
+
+.projectIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #CCC9D0;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #182631;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #CCC9D0;
+  border-radius: 10px;
+}
+
+#container {
+  height: auto;
+  width: 100vw;
+  background-color: #182631;
+  overflow-x: hidden;
+}
+
+#container > * {
+  position: relative;
+}
+
+#homeContainer {
+  height: 100vh;
+  width: 100vw;
+}
+
+#aboutContainer {
+  height: 100vh;
+  width: 100vw;
+}
+
+#showcaseContainer {
+  height: auto;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #FF8B1F;
+}
+
+#contactContainer {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .test {

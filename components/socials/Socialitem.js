@@ -3,32 +3,32 @@ import { gsap, hoverElement, leaveElement } from "../../util/gsap";
 
 const Socialitem = (props) => {
   const { title, symbol, id } = props;
-  const socialItemRef = useRef();
   const socialTime = useRef();
-  const containerId = useRef(`socialIconContainer${id}`);
-  const classId = useRef(`socialIconHeader${id}`);
-  const logoId = useRef(`socialIconIcon${id}`);
+  const socialItemRef = useRef();
+  const a = gsap.utils.selector(socialItemRef);
 
   useEffect(() => {
-    socialTime.current = gsap.timeline();
-    socialTime.current.pause();
-    socialTime.current.to(`.${containerId.current}`, {
-      duration: .2,
-      y: -3,
-    });
-    socialTime.current.to(`.${logoId.current}`, {
-      duration: 0.2,
-      color: "#FF8B1F",
-    });
-    socialTime.current.to(`.${classId.current}`, {
-      duration: 0.4,
-      text: title,
-    });
+    socialTime.current = gsap
+      .timeline()
+      .pause()
+      .to(socialItemRef.current, {
+        duration: 0.2,
+        y: -3,
+      })
+      .to(a(`.socialIconIcon${id}`), {
+        duration: 0.2,
+        color: "#FF8B1F",
+      })
+      .to(a(`.socialIconHeader${id}`), {
+        duration: 0.4,
+        text: title,
+      });
   }, []);
 
   return (
     <div
-      className={containerId.current}
+      className={`socialIconContainer${id}`}
+      ref={socialItemRef}
       onMouseEnter={() => {
         if (!socialTime.current) return;
         hoverElement(socialTime.current);
@@ -38,8 +38,8 @@ const Socialitem = (props) => {
         leaveElement(socialTime.current);
       }}
     >
-      <span className={classId.current} ref={socialItemRef}></span>
-      <span className={logoId.current}>{symbol}</span>
+      <span className={`socialIconHeader${id}`}></span>
+      <span className={`socialIconIcon${id}`}>{symbol}</span>
     </div>
   );
 };
