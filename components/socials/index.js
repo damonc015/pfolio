@@ -6,11 +6,11 @@ import { IoIosPaper } from "react-icons/io";
 import Socialitem from "./Socialitem";
 import { gsap } from "../../util/gsap";
 
-const index = () => {
+const Index = () => {
   const socialContainerRef = useRef();
-  const a = gsap.utils.selector(socialContainerRef);
   const socialContainerTimeline = useRef();
   useEffect(() => {
+    const a = gsap.utils.selector(socialContainerRef);
     socialContainerTimeline.current = gsap.timeline().fromTo(
       a(".socialIconContainerWrapper"),
       { opacity: 0, xPercent: 50 },
@@ -60,4 +60,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

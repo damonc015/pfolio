@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap, hoverElement } from "../../util/gsap";
 import Roadicon from "./roadIcon";
 
-const index = () => {
+const Index = () => {
   const roadTime = useRef();
   const roadmapRef = useRef();
   const [activeIcon, setActiveIcon] = useState();
@@ -27,4 +27,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

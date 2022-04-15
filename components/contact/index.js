@@ -10,10 +10,10 @@ const Contact = () => {
   return (
     <div id="contactContainer">
       <div>
-        <h2>Let's talk!</h2>
+        <h2>Let&apos;s talk!</h2>
         <p>
-          If you have any inquiries, suggestions, or want to simply chat, I'd
-          love to hear from you.
+          If you have any inquiries, suggestions, or want to simply chat,
+          I&apos;d love to hear from you.
         </p>
       </div>
       <form className={classes.formContainer} onSubmit={handleSubmit}>

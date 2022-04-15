@@ -16,14 +16,14 @@ const Firesparks = () => {
   let rand = Math.floor(Math.random() * fireColors.length);
   return (
     <div>
-      {fireColors.map((item) => {
+      {/* {fireColors.map((item) => {
         return (
           <div
             className={classes.firesparkContainer}
             style={{ backgroundColor: item }}
           ></div>
         );
-      })}
+      })} */}
     </div>
   );
 };
