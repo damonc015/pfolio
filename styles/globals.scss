@@ -2,7 +2,10 @@
 @import "./partials/nav";
 @import "./partials/socials";
 @import "./partials/roadmap";
+@import "./partials/home";
+@import "./partials/about";
 @import "./partials/showcase";
+@import "./partials/contact";
 
 html,
 body {
@@ -33,7 +36,6 @@ a {
 *::-webkit-scrollbar-thumb {
   background-color: $textColor;
   border-radius: 10px;
-  // border: 2px solid $backgroundColorContrast;
 }
 
 #container {
@@ -46,32 +48,32 @@ a {
 }
 #homeContainer {
   @include size(100vh, 100vw);
+  overflow-y: hidden;
 }
 #aboutContainer {
   @include size(100vh, 100vw);
+  @include flex(flex-start, center, column);
+  border: 1px solid red;
+  padding: 3rem;
 }
 #showcaseContainer {
   @include size(auto, 100vw);
-  @include flex(space-around, center, column);
+  @include flex(flex-start, center, column);
   border: 1px solid $mainColor;
-}
-#contactContainer {
-  @include size(100vh, 100vw);
-  @include flex(center, center, column);
+  gap: 2rem;
+  padding: 3rem;
 }
 
-.test {
-  height: auto;
-  width: 40vw;
-  color: $textColor;
-  background-color: $backgroundColor;
-  font-family: $textFont;
-  transition: all 0.4s ease-out;
-  border: 1px solid green;
-  &:hover {
-    color: $mainColor;
-    animation: heat 15s ease-out forwards;
-  }
+#contactContainer {
+  @include size(100vh, 100vw);
+  @include flex(flex-start, center, column);
+  overflow: hidden;
+  padding: 3rem;
+  gap: 1rem;
+  border: 1px solid red;
+}
+.overlay{
+  @include size(auto,auto)
 }
 
 @keyframes heat {
@@ -80,5 +82,13 @@ a {
   }
   100% {
     color: $burntColor;
+  }
+}
+@media (max-width: 768px) {
+  #showcaseContainer {
+    padding: 3rem 1.5rem;
+  }
+  #contactContainer {
+    padding: 3rem 1.5rem;
   }
 }

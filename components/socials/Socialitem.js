@@ -17,7 +17,7 @@ const Socialitem = (props) => {
       })
       .to(a(`.socialIconIcon${id}`), {
         duration: 0.2,
-        color: "#FF8B1F",
+        color: "#F3CA40",
       })
       .to(a(`.socialIconHeader${id}`), {
         duration: 0.4,

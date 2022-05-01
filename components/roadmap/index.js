@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import { gsap, hoverElement } from "../../util/gsap";
+import { useEffect, useRef, useContext } from "react";
+import { gsap } from "../../util/gsap";
+import RoadContext from "../../util/roadmapProvider";
 import Roadicon from "./roadIcon";
 
 const Index = () => {
   const roadTime = useRef();
   const roadmapRef = useRef();
-  const [activeIcon, setActiveIcon] = useState();
+  const { firstTime, activeIcon } = useContext(RoadContext);
 
   useEffect(() => {
     if (!activeIcon) return;
@@ -16,13 +17,22 @@ const Index = () => {
         autokill: true,
       },
     });
+    // window.addEventListener("wheel", () => {
+    //   if (roadTime.current.isActive()) {
+    //     roadTime.current.kill();
+    //   }
+    // });
   }, [activeIcon]);
   return (
-    <div id="roadmap" ref={roadmapRef}>
-      <Roadicon page="home" current={activeIcon} isActive={setActiveIcon} />
-      <Roadicon page="about" current={activeIcon} isActive={setActiveIcon} />
-      <Roadicon page="showcase" current={activeIcon} isActive={setActiveIcon} />
-      <Roadicon page="contact" current={activeIcon} isActive={setActiveIcon} />
+    <div
+      id="roadmap"
+      ref={roadmapRef}
+      style={firstTime ? { display: "none" } : null}
+    >
+      <Roadicon page="home" />
+      <Roadicon page="about" />
+      <Roadicon page="showcase" />
+      <Roadicon page="contact" />
     </div>
   );
 };

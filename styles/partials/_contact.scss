@@ -1,0 +1,184 @@
+@import "../../util/variables";
+
+#contactTitleContainer {
+  @include size(auto, 80%);
+  @include flex(center, center, column);
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+#contactTitle {
+  @include size(3.5rem, 100%);
+  font-family: $titlefontAlt;
+  font-size: 3rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: left;
+  letter-spacing: 0.2rem;
+  padding-top: 0.25rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 700;
+}
+#contactTitleShadow {
+  @include size(2rem, 300vw);
+  position: absolute;
+  z-index: 1;
+  bottom: -0.25rem;
+  font-family: $titlefontAlt;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #ccc9d01e;
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+}
+
+$inputContainerWidth: 90%;
+$inputBorderRadius: 10px;
+$inputPadding: 1rem 2rem;
+$subContainerGap: 1.25rem;
+
+#formIntro {
+  @include size(auto, 80%);
+  padding-left: 3rem;
+  font-family: $subTitlefont;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  & > * {
+    display: inline;
+  }
+  p {
+    font-family: $textFont;
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    padding-right: 0.5rem;
+  }
+}
+
+.formContainer {
+  @include flex(flex-start, center, column);
+  @include size(100%, 80%);
+  background-color: $backgroundColorContrast;
+  border-radius: 10px;
+  padding: 1rem 0;
+  gap: 0.75rem;
+  opacity: 0;
+
+  label {
+    @include size(auto, 100%);
+    @include flex(flex-start, center, row);
+    font-family: $subTitlefont;
+    font-size: 1.25rem;
+  }
+  label > span {
+    color: $mainColor;
+  }
+  input {
+    @include size(2.5rem, 100%);
+    background-color: $backgroundColor;
+    font-family: $textFont;
+    font-size: 0.9rem;
+    border-radius: $inputBorderRadius;
+    caret-color: $textColor;
+    color: $textColor;
+    border: none;
+    outline: none;
+    padding: 0.35rem 1rem 0.2rem 1rem;
+  }
+  textarea {
+    @include size(100%, 100%);
+    background-color: $backgroundColor;
+    font-family: $textFont;
+    border-radius: $inputBorderRadius;
+    caret-color: $textColor;
+    color: $textColor;
+    border: none;
+    outline: none;
+    padding: 0.6rem 1rem;
+    resize: none;
+  }
+  button {
+    @include size(auto, 50%);
+    @include transition(0.2s);
+    background-color: $backgroundColor;
+    color: $textColor;
+    padding: 1rem 2rem;
+    font-family: $titlefont;
+    outline: none;
+    border: 1px solid $backgroundColorTint;
+    border-radius: 10px;
+    margin: 1rem;
+    &:hover {
+      background-color: $backgroundColorContrast;
+      color: $mainColor;
+      border: 1px solid $mainColor;
+    }
+  }
+}
+.nameContainer {
+  @include flex(center, center, column);
+  @include size(auto, $inputContainerWidth);
+  gap: $subContainerGap;
+}
+.emailContainer {
+  @include flex(center, center, column);
+  @include size(auto, $inputContainerWidth);
+  gap: $subContainerGap;
+}
+.subjectContainer {
+  @include flex(center, center, column);
+  @include size(auto, $inputContainerWidth);
+  gap: $subContainerGap;
+}
+.messageContainer {
+  @include flex(center, center, column);
+  @include size(100%, $inputContainerWidth);
+  gap: $subContainerGap;
+}
+.formLabels {
+  opacity: 0;
+}
+
+@media (max-width: 992px) {
+  #formIntro {
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  #contactTitle {
+    font-size: 2.75rem;
+  }
+  #formIntro {
+    @include size(auto, 85%);
+    padding-left: 2rem;
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+}
+@media (max-width: 576px) {
+  #contactTitle {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  #contactTitleContainer {
+    @include size(auto, 100%);
+    margin-bottom: 0rem;
+  }
+  #formIntro {
+    @include size(auto, 100%);
+    padding-left: 1.5rem;
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+  .formContainer {
+    @include size(100%, 100%);
+  }
+}

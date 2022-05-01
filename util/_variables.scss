@@ -8,18 +8,19 @@
   align-items: $a;
   flex-direction: $d;
 }
-@mixin transition($time){
+@mixin transition($time) {
   transition: all $time ease-out;
 }
 
-$mainColor:#FF8B1F;
-$burntColor:#140A00;
+$mainColor: #F3CA40;
+$burntColor: #140a00;
 
 $backgroundColor: #182631;
-$backgroundColorContrast:#25323E;
-$backgroundColorGray:#3b4043;
+$backgroundColorContrast: #25323e;
+$backgroundColorGray: #3b4043;
 $backgroundColorTint: #3e4a57;
-$textColor: #CCC9D0;
+$textColor: #ccc9d0;
+$brighterText: #e8e3f0;
 $textShadow: #7f828c;
 $shadowColor: #020b10;
 

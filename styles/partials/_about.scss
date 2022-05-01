@@ -1,0 +1,56 @@
+@import "../../util/variables";
+
+#aboutTitleContainer {
+  @include size(auto, 80%);
+  @include flex(center, center, column);
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+#aboutTitle {
+  @include size(3.5rem, 100%);
+  font-family: $titlefontAlt;
+  font-size: 3rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: left;
+  letter-spacing: 0.2rem;
+  padding-top: 0.25rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 700;
+}
+
+#aboutTitleShadow {
+  @include size(2rem, 300vw);
+  position: absolute;
+  z-index: 1;
+  bottom: -0.25rem;
+  font-family: $titlefontAlt;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #ccc9d01e;
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+}
+
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+  #aboutTitle {
+    font-size: 2.75rem;
+  }
+}
+@media (max-width: 576px) {
+  #aboutTitle {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  #aboutTitleContainer {
+    @include size(auto, 100%);
+    margin-bottom: 0rem;
+  }
+}

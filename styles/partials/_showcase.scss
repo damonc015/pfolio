@@ -1,26 +1,199 @@
 @import "../../util/variables";
 
+#showTitleContainer {
+  @include size(auto, 80%);
+  @include flex(center, center, column);
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+#showTitle {
+  @include size(3.5rem, 100%);
+  font-family: $titlefontAlt;
+  font-size: 3rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: left;
+  letter-spacing: 0.2rem;
+  padding-top: 0.25rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 700;
+}
+#showTitleShadow {
+  @include size(2rem, 300vw);
+  position: absolute;
+  z-index: 1;
+  bottom: -0.25rem;
+  font-family: $titlefontAlt;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #ccc9d01e;
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+}
+
 .projectWrapper {
-  @include size(50vh, 50vw);
-  background-color: gray;
+  @include size(30vh, 80%);
+  position: relative;
+  opacity: 0;
+}
+.projectOverlayLink {
+  @include size(100%, 100%);
+  position: absolute;
+  z-index: inherit;
 }
 
-.projectContainer{
-
+.projectContainer {
+  @include size(inherit, 100%);
+  @include flex(flex-start, center, column);
 }
 
-.projectTitleContainer{
-
+.projectTitleContainer {
+  @include flex(flex-start, center, column);
+  @include size(inherit, 100%);
+  position: relative;
+  color: $brighterText;
+  z-index: 800;
+  opacity: 0.92;
+  gap: 2.5rem;
+  padding: 1rem;
+  background-color: $backgroundColorContrast;
+  box-shadow: 8px 5px $backgroundColorGray;
+  h2 {
+    text-align: center;
+    letter-spacing: 0.05rem;
+  }
+  &::before {
+    content: "";
+    @include size(1.4rem, 1.4rem);
+    @include transition(0.4s);
+    position: absolute;
+    z-index: 1;
+    left: 2px;
+    top: 2px;
+    border: 2px solid $mainColor;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 1.5px;
+  }
+  &::after {
+    content: "";
+    @include size(1.4rem, 1.4rem);
+    @include transition(0.4s);
+    position: absolute;
+    z-index: 1;
+    right: 2px;
+    bottom: 2px;
+    border: 2px solid $mainColor;
+    border-left: 0;
+    border-top: 0;
+  }
+  &:hover {
+    $projectBorder: 94%;
+    opacity: 0.8;
+    cursor: pointer;
+    &::before {
+      @include size($projectBorder, $projectBorder);
+      left: -2px;
+      top: -2px;
+    }
+    &::after {
+      @include size($projectBorder, $projectBorder);
+      right: -2px;
+      bottom: -2px;
+    }
+  }
 }
 
-.projectTitle{
-
+.projectTitleHead {
+  @include size(auto, 100%);
+  @include flex(center, center, column);
 }
 
-.projectIcons{
-    @include flex(center,center,center);
+.projectTitle {
+  font-family: $titlefont;
+  font-size: 1.5rem;
 }
 
-.projectDescription{
+.projectIcons {
+  @include size(auto, auto);
+  @include flex(center, center, row);
+  position: relative;
+  z-index: 2000;
+  gap: 1.5rem;
+  font-family: $subTitlefont;
+  font-size: 1.25rem;
+  color: $mainColor;
+  & > *:hover {
+    @include transition(0.3s);
+    transform: scale(1.3) translateY(-2px);
+    cursor: pointer;
+  }
+}
 
+.projectDescription {
+  font-family: $textFont;
+  width: 60%;
+  text-align: center;
+}
+
+.projectImage {
+  @include size(100%, 100%);
+  position: absolute;
+  z-index: 700;
+}
+
+@media (max-width: 992px) {
+  .projectTitleContainer {
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  #showTitle {
+    font-size: 2.75rem;
+  }
+  #showTitleContainer {
+    margin-bottom: 0rem;
+  }
+  .projectWrapper {
+    @include size(30vh, 90%);
+  }
+  .projectTitleContainer {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 576px) {
+  #showTitle {
+    font-size: 2.25rem;
+    text-align: center;
+    padding-left: 0;
+  }
+  #showTitleContainer {
+    @include size(auto, 100%);
+    margin-bottom: 0rem;
+  }
+  .projectWrapper {
+    @include size(40vh, 95%);
+  }
+  .projectTitleContainer {
+    @include flex(center, center, column);
+    padding: 0.5rem;
+  }
+  .projectTitleHead {
+    gap: 0.25rem;
+  }
+  .projectTitle {
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
+    font-size: 1.4rem;
+  }
+  .projectDescription {
+    @include size(auto, 95%);
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+  }
 }

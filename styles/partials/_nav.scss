@@ -1,32 +1,63 @@
 @import "../../util/variables";
 nav {
-  @include size(10vh, 100%);
-  @include flex(space-between, center, row);
+  @include size(auto, auto);
   font-family: $titlefont;
-  // background-color: $backgroundColorContrast;
+  position: fixed;
+  top: 0;
+  z-index: 9000;
+  color: $brighterText;
+  background-color: #25323eec;
+  display: none;
 }
 nav ul {
-  @include size(100%, 40%);
-  @include flex(space-around, center, row);
+  @include size(80%, 80%);
+  @include flex(space-around, center, column);
+  font-size: 1.25rem;
   list-style-type: none;
   padding-inline-start: 0;
   margin-block-start: 0em;
   margin-block-end: 0em;
-  padding-right: 2rem;
 }
 nav li {
-  @include size(50%, 25%);
+  @include size(auto, auto);
   @include flex(center, center, row);
+  @include transition(0.3s);
   position: relative;
-  &:after {
-    content: "";
-    @include size(4px, 25%);
-    position: absolute;
-    bottom: 0;
-    background-color: $backgroundColorGray;
-    border-radius: 50%;
-    &:hover {
-      border: 1px solid red;
-    }
+  padding: 1.5rem 0;
+  letter-spacing: 0.1rem;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    color: $textColor;
+  }
+}
+
+.hideNav {
+  @include size(auto, auto);
+  position: relative;
+}
+.menuIcon {
+  font-size: 2.25rem;
+  position: absolute;
+  left: 1.2rem;
+  top: 1.4rem;
+  z-index: 11000;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    color: $mainColor;
+  }
+}
+.showNav {
+  @include size(100vh, 100vw);
+  @include flex(center, center, column);
+  position: relative;
+  background-color: #1826310a;
+}
+
+@media (max-width: 576px) {
+  nav {
+    @include flex(center, center, column);
+    border: 1px solid black;
   }
 }

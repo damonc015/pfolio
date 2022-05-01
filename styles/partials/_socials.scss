@@ -3,6 +3,7 @@
 .socialContainer {
   @include flex(center, center, column);
   @include size(auto, 10vw);
+  @include transition(0.3s);
   position: fixed;
   font-family: $titlefont;
   right: 4rem;
@@ -31,7 +32,7 @@ $social_icons: "A", "B", "C", "D", "E";
   .socialIconIcon#{$social_icon} {
     @include flex(center, center, row);
     @include size(100%, 15%);
-    font-size: 1.25rem;
+    @include transition(0.4s);
   }
 }
 @each $social_icon in $social_icons {
@@ -40,5 +41,42 @@ $social_icons: "A", "B", "C", "D", "E";
     @include size(100%, auto);
     font-size: 1.25rem;
     padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .socialContainer {
+    right: 3rem;
+    bottom: 1.8rem;
+  }
+  @each $social_icon in $social_icons {
+    .socialIconIcon#{$social_icon} {
+      @include flex(center, center, row);
+      @include size(100%, 21%);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .socialContainer {
+    right: 2.2rem;
+    bottom: 1.4rem;
+  }
+  @each $social_icon in $social_icons {
+    .socialIconIcon#{$social_icon} {
+      @include flex(center, center, row);
+      @include size(100%, 27%);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .socialContainer {
+    right: 1.7rem;
+    bottom: 1.2rem;
+  }
+  @each $social_icon in $social_icons {
+    .socialIconIcon#{$social_icon} {
+      @include flex(center, center, row);
+      @include size(100%, 35%);
+    }
   }
 }

@@ -1,14 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import Link from "next/link";
 import { FaBlogger, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoIosPaper } from "react-icons/io";
 import Socialitem from "./Socialitem";
 import { gsap } from "../../util/gsap";
+import RoadContext from "../../util/roadmapProvider";
 
 const Index = () => {
   const socialContainerRef = useRef();
   const socialContainerTimeline = useRef();
+  const { firstTime, setFirstTime, setActiveIcon } = useContext(RoadContext);
+
   useEffect(() => {
     const a = gsap.utils.selector(socialContainerRef);
     socialContainerTimeline.current = gsap.timeline().fromTo(
@@ -18,8 +21,10 @@ const Index = () => {
         duration: 1.5,
         opacity: 1,
         xPercent: 0,
-        stagger: { each: 0.25, from: "end" },
-      }
+        stagger: { each: 0.25 },
+        ease: "Back.easeOut",
+      },
+      8
     );
   }, []);
 
@@ -45,7 +50,15 @@ const Index = () => {
         </a>
       </Link>
 
-      <div className="socialIconContainerWrapper">
+      <div
+        className="socialIconContainerWrapper"
+        onClick={() => {
+          if (firstTime) {
+            setFirstTime(false);
+          }
+          setActiveIcon("contact");
+        }}
+      >
         <Socialitem title={"Email"} symbol={<AiOutlineMail />} id={"D"} />
       </div>
 

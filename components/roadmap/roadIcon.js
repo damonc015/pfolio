@@ -1,11 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { gsap, hoverElement, leaveElement } from "../../util/gsap";
-import { GiAnvil, GiAnvilImpact } from "react-icons/gi";
+import { RiTaxiLine, RiTaxiFill } from "react-icons/ri";
+import RoadContext from "../../util/roadmapProvider";
 
 const Roadicon = (props) => {
-  const { page, current, isActive } = props;
+  const { page } = props;
   const roadIconRef = useRef();
   const roadTime = useRef();
+  const{activeIcon, setActiveIcon} = useContext(RoadContext)
+
   const a = gsap.utils.selector(roadIconRef);
   useEffect(() => {
     roadTime.current = gsap
@@ -18,7 +21,7 @@ const Roadicon = (props) => {
     <div
       ref={roadIconRef}
       onClick={() => {
-        isActive(page);
+        setActiveIcon(page);
       }}
       className={`roadmapIcon${page}`}
       onMouseEnter={() => {
@@ -30,10 +33,10 @@ const Roadicon = (props) => {
         leaveElement(roadTime.current);
       }}
     >
-      {current === page ? (
-        <GiAnvilImpact className="hitAnvil" />
+      {activeIcon === page ? (
+        <RiTaxiFill className="hitAnvil" />
       ) : (
-        <GiAnvil className="normalAnvil" />
+        <RiTaxiLine className="normalAnvil" />
       )}
       <span className="roadmapText"></span>
     </div>
