@@ -5,7 +5,7 @@ import { BiMenuAltLeft, BiMenuAltRight } from "react-icons/bi";
 import { gsap } from "../../util/gsap";
 import RoadContext from "../../util/roadmapProvider";
 
-const index = () => {
+const Index = () => {
   const [showNav, setShowNav] = useState(false);
   const {activeIcon, setActiveIcon} = useContext(RoadContext);
   const navTime = useRef();
@@ -47,4 +47,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

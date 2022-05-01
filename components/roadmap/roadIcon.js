@@ -7,14 +7,14 @@ const Roadicon = (props) => {
   const { page } = props;
   const roadIconRef = useRef();
   const roadTime = useRef();
-  const{activeIcon, setActiveIcon} = useContext(RoadContext)
+  const { activeIcon, setActiveIcon } = useContext(RoadContext);
 
-  const a = gsap.utils.selector(roadIconRef);
   useEffect(() => {
+    const a = gsap.utils.selector(roadIconRef);
     roadTime.current = gsap
       .timeline()
       .pause()
-      .to(a(".roadmapText"), { duration: .5, text: page.toUpperCase() });
+      .to(a(".roadmapText"), { duration: 0.5, text: page.toUpperCase() });
   }, []);
 
   return (

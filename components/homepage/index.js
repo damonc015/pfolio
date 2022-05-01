@@ -77,5 +77,5 @@ const Homepage = forwardRef((props, ref) => {
     </div>
   );
 });
-
+Homepage.displayName = "Homepage";
 export default Homepage;

@@ -115,5 +115,5 @@ const Showcase = forwardRef((props, ref) => {
     </div>
   );
 });
-
+Showcase.displayName = "Showcase"
 export default Showcase;

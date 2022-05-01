@@ -62,10 +62,10 @@ const About = forwardRef((props, ref) => {
           <h1 id="aboutTitle"></h1>
           <span id="aboutTitleShadow">{" about ".repeat(100)}</span>
         </div>
-        <p>Hi I'm Damon! I'm an NYU graduate and I make websites</p>
+        {/* <p>Hi I'm Damon! I'm an NYU graduate and I make websites</p> */}
       </div>
     </div>
   );
 });
-
+About.displayName = "About"
 export default About;
