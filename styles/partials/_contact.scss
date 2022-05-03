@@ -74,7 +74,7 @@ $subContainerGap: 1.25rem;
     @include size(auto, 100%);
     @include flex(flex-start, center, row);
     font-family: $subTitlefont;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   label > span {
     color: $mainColor;
@@ -152,7 +152,7 @@ $subContainerGap: 1.25rem;
   padding-top: 5rem;
   h2 {
     font-size: 2.15rem;
-    text-align: center
+    text-align: center;
   }
   button {
     @include size(3.5rem, 15rem);
@@ -189,6 +189,14 @@ $subContainerGap: 1.25rem;
       font-size: 1.4rem;
     }
   }
+  .formContainer {
+    span {
+      gap: 0.5rem;
+    }
+    button {
+      margin: 0.25rem;
+    }
+  }
 }
 @media (max-width: 576px) {
   #contactTitle {
@@ -208,5 +216,23 @@ $subContainerGap: 1.25rem;
   }
   .formContainer {
     @include size(100%, 100%);
+    padding: 0.5rem 0;
+    button {
+      @include size(3.5rem, 60%);
+    }
+  }
+}
+@media (max-height: 820px) {
+  #contactTitleContainer {
+    @include size(auto, 100%);
+    margin-bottom: 0.5rem;
+  }
+  #formIntro {
+    margin-bottom: 0.25rem;
+    padding-left: 0;
+    h2 {
+      font-size: 1.2rem;
+    }
+    font-size: 0.9rem;
   }
 }

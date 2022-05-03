@@ -2152,7 +2152,7 @@ path {
       -ms-flex-direction: row;
           flex-direction: row;
   font-family: "Overlock", cursive;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .formContainer label > span {
@@ -2366,6 +2366,12 @@ path {
   #formIntro h2 {
     font-size: 1.4rem;
   }
+  .formContainer span {
+    gap: 0.5rem;
+  }
+  .formContainer button {
+    margin: 0.25rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -2389,6 +2395,27 @@ path {
   .formContainer {
     height: 100%;
     width: 100%;
+    padding: 0.5rem 0;
+  }
+  .formContainer button {
+    height: 3.5rem;
+    width: 60%;
+  }
+}
+
+@media (max-height: 820px) {
+  #contactTitleContainer {
+    height: auto;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  #formIntro {
+    margin-bottom: 0.25rem;
+    padding-left: 0;
+    font-size: 0.9rem;
+  }
+  #formIntro h2 {
+    font-size: 1.2rem;
   }
 }
 
