@@ -17,7 +17,7 @@ const Showcase = forwardRef((props, ref) => {
       setActiveIcon("showcase");
     }, 1000);
     return () => {
-      clearTimeout(lastTimeout);
+      clearTimeout(lastTimeout.current);
     };
   }, [inView]);
 

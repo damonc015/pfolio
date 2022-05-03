@@ -44,7 +44,7 @@ const Homepage = forwardRef((props, ref) => {
       setActiveIcon("home");
     }, 1000);
     return () => {
-      clearTimeout(lastTimeout);
+      clearTimeout(lastTimeout.current);
     };
   }, [inView]);
 

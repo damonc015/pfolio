@@ -20,7 +20,7 @@ const Contact = forwardRef((props, ref) => {
       setActiveIcon("contact");
     }, 1000);
     return () => {
-      clearTimeout(lastTimeout);
+      clearTimeout(lastTimeout.current);
     };
   }, [inView]);
 

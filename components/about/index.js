@@ -18,7 +18,7 @@ const About = forwardRef((props, ref) => {
       setActiveIcon("about");
     }, 1000);
     return () => {
-      clearTimeout(lastTimeout);
+      clearTimeout(lastTimeout.current);
     };
   }, [inView]);
 
