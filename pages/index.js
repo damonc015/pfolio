@@ -18,9 +18,9 @@ export default function Home() {
       style={firstTime ? { height: "100vh", overflowY: "hidden" } : null}
     >
       <Head>
-        <title>D.Chu Portfolio</title>
+        <title>Damon Portfolio</title>
         <meta name="description" content="Portfolio" />
-        <link rel="icon" href="/images/anvilLogo.svg" />
+        <link rel="icon" href="/images/portfolioIcon.ico" />
       </Head>
 
       <InView threshold={0.85}>

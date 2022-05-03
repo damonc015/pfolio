@@ -1,11 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { gsap, hoverElement, leaveElement } from "../../util/gsap";
+import Link from "next/dist/client/link";
+import RoadContext from "../../util/roadmapProvider";
 
 const Socialitem = (props) => {
-  const { title, symbol, id } = props;
+  const { title, link, symbol, id } = props;
   const socialTime = useRef();
   const socialItemRef = useRef();
   const a = gsap.utils.selector(socialItemRef);
+
+  const { firstTime, setFirstTime, setActiveIcon } = useContext(RoadContext);
 
   useEffect(() => {
     socialTime.current = gsap
@@ -25,21 +29,60 @@ const Socialitem = (props) => {
       });
   }, []);
 
+  if (title === "Email") {
+    return (
+      <div
+        className={`socialIconContainer${id}`}
+        ref={socialItemRef}
+        onClick={() => {
+          if (firstTime) {
+            setFirstTime(false);
+          }
+          setActiveIcon("contact");
+        }}
+      >
+        <span className={`socialIconHeader${id}`}></span>
+        <Link href={"/"} passHref>
+          <a style={{ height: "100%", width: "0" }}>
+            <span
+              className={`socialIconIcon${id}`}
+              onMouseEnter={() => {
+                if (!socialTime.current) return;
+                hoverElement(socialTime.current);
+              }}
+              onMouseLeave={() => {
+                if (!socialTime.current) return;
+                leaveElement(socialTime.current);
+              }}
+            >
+              {symbol}
+            </span>
+          </a>
+        </Link>
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={`socialIconContainer${id}`}
-      ref={socialItemRef}
-      onMouseEnter={() => {
-        if (!socialTime.current) return;
-        hoverElement(socialTime.current);
-      }}
-      onMouseLeave={() => {
-        if (!socialTime.current) return;
-        leaveElement(socialTime.current);
-      }}
-    >
+    <div className={`socialIconContainer${id}`} ref={socialItemRef}>
       <span className={`socialIconHeader${id}`}></span>
-      <span className={`socialIconIcon${id}`}>{symbol}</span>
+      <Link href={link} passHref>
+        <a target="_blank" style={{ height: "100%", width: "0" }}>
+          <span
+            className={`socialIconIcon${id}`}
+            onMouseEnter={() => {
+              if (!socialTime.current) return;
+              hoverElement(socialTime.current);
+            }}
+            onMouseLeave={() => {
+              if (!socialTime.current) return;
+              leaveElement(socialTime.current);
+            }}
+          >
+            {symbol}
+          </span>
+        </a>
+      </Link>
     </div>
   );
 };

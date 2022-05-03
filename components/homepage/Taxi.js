@@ -40,7 +40,10 @@ function Taxi(props) {
             const timeout = setTimeout(() => {
               setFirstTime(false);
               setActiveIcon(type);
-            }, 2000);
+            }, 1750);
+            return () => {
+              clearTimeout(timeout);
+            };
           }}
         >
           <path

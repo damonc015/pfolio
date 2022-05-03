@@ -13,7 +13,7 @@ const Showcase = forwardRef((props, ref) => {
 
   useEffect(() => {
     if (!inView) return;
-    lastTimeout = setTimeout(() => {
+    lastTimeout.current = setTimeout(() => {
       setActiveIcon("showcase");
     }, 1000);
     return () => {

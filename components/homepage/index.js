@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect, useRef, forwardRef } from "react";
-import { gsap, hoverElement, leaveElement } from "../../util/gsap";
+import { gsap } from "../../util/gsap";
 import Nav from "../nav";
 import City from "./City";
 import Socials from "../socials";
@@ -28,19 +28,19 @@ const Homepage = forwardRef((props, ref) => {
       .fromTo(
         a(".taxiWrap"),
         { x: "90vw" },
-        { duration: 8, x: 0, stagger: 0.5 }
+        { duration: 6, x: 0, stagger: 0.5 }
       )
       .fromTo(
         a("#title"),
         { y: "20vh" },
         { duration: 2, y: "0vh", opacity: 1 },
-        8
+        5
       );
   }, []);
 
   useEffect(() => {
     if (!inView) return;
-    lastTimeout = setTimeout(() => {
+    lastTimeout.current = setTimeout(() => {
       setActiveIcon("home");
     }, 1000);
     return () => {

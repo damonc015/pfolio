@@ -145,6 +145,34 @@ $subContainerGap: 1.25rem;
   opacity: 0;
 }
 
+#submitContainer {
+  @include size(100%, 80%);
+  @include flex(flex-start, center, column);
+  gap: 2rem;
+  padding-top: 5rem;
+  h2 {
+    font-size: 2.15rem;
+    text-align: center
+  }
+  button {
+    @include size(3.5rem, 15rem);
+    @include flex(center, center, row);
+    @include transition(0.3s);
+    padding: 1rem;
+    font-family: $textFont;
+    font-size: 1.25rem;
+    color: $textColor;
+    background-color: $backgroundColorContrast;
+    outline: none;
+    border: 1px solid $backgroundColorTint;
+    border-radius: 10px;
+    &:hover {
+      color: $mainColor;
+      border: 1px solid $mainTint;
+      transform: translate3d(3px, -3px, 0px);
+    }
+  }
+}
 @media (max-width: 992px) {
   #formIntro {
     padding-left: 1rem;

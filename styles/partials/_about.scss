@@ -37,11 +37,46 @@
   opacity: 0;
 }
 
+#aboutTextContainer {
+  @include size(100%, 70%);
+  @include flex(flex-start, center, column);
+  padding-top: 2.5rem;
+  font-family: $textFont;
+  font-size: 1.2rem;
+}
+.itemWrapper {
+  @include flex(center, center, row);
+  @include size(100%, 100%);
+  opacity: 0;
+  gap: 1.5rem;
+}
+.aboutTextItem {
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+.aboutHightlight {
+  @include transition(0.1s);
+  color: $mainColor;
+  &:hover {
+    cursor: pointer;
+    color: $mainTint;
+  }
+}
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {
   #aboutTitle {
     font-size: 2.75rem;
+  }
+  #aboutTextContainer {
+    @include size(100%, 80%);
+    gap: 1rem;
+    padding-top: 0rem;
+    font-size: 1.1rem;
+  }
+  .itemWrapper {
+    @include flex(center, center, column);
   }
 }
 @media (max-width: 576px) {
@@ -53,4 +88,8 @@
     @include size(auto, 100%);
     margin-bottom: 0rem;
   }
+  #aboutTextContainer {
+    @include size(100%, 95%);
+  }
 }
+

@@ -2,20 +2,21 @@ import { useState, useEffect, useRef, forwardRef, useContext } from "react";
 import { gsap } from "../../util/gsap";
 import emailjs from "@emailjs/browser";
 import RoadContext from "../../util/roadmapProvider";
+import Submit from "./Submit";
 
 const Contact = forwardRef((props, ref) => {
   const formRef = useRef();
   const contactRef = useRef();
   const contactTime = useRef();
   const contactShadow = useRef();
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState("");
 
   const { inView } = props;
   const { setActiveIcon, lastTimeout } = useContext(RoadContext);
 
   useEffect(() => {
     if (!inView) return;
-    lastTimeout = setTimeout(() => {
+    lastTimeout.current = setTimeout(() => {
       setActiveIcon("contact");
     }, 1000);
     return () => {
@@ -103,8 +104,34 @@ const Contact = forwardRef((props, ref) => {
         { duration: 120, x: "-25%", repeat: -1, ease: "Power0.easeOut" },
         2
       );
-  }, []);
+  }, [status]);
 
+  if (status === "Fail") {
+    return (
+      <div className="overlay" ref={ref}>
+        <div id="contactContainer" ref={contactRef}>
+          <div id="contactTitleContainer">
+            <h1 id="contactTitle"></h1>
+            <span id="contactTitleShadow">{"contact ".repeat(100)}</span>
+          </div>
+          <Submit setStatus={setStatus} error={true} />
+        </div>
+      </div>
+    );
+  }
+  if (status === "Success") {
+    return (
+      <div className="overlay" ref={ref}>
+        <div id="contactContainer" ref={contactRef}>
+          <div id="contactTitleContainer">
+            <h1 id="contactTitle"></h1>
+            <span id="contactTitleShadow">{"contact ".repeat(100)}</span>
+          </div>
+          <Submit setStatus={setStatus} error={false} />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="overlay" ref={ref}>
       <div id="contactContainer" ref={contactRef}>
@@ -150,5 +177,5 @@ const Contact = forwardRef((props, ref) => {
     </div>
   );
 });
-Contact.displayName = "Contact"
+Contact.displayName = "Contact";
 export default Contact;

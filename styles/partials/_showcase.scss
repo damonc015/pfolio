@@ -166,6 +166,42 @@
     padding: 0.5rem;
   }
 }
+@media (max-height: 900px) {
+  #showTitle {
+    font-size: 2.25rem;
+    text-align: center;
+    padding-left: 0;
+  }
+  #showTitleContainer {
+    @include size(auto, 100%);
+    margin-bottom: 0rem;
+  }
+  .projectWrapper {
+    @include size(40vh, 95%);
+  }
+  .projectTitleContainer {
+    @include flex(center, center, column);
+    padding: 0.5rem;
+  }
+  .projectTitleHead {
+    gap: 0.25rem;
+  }
+  .projectTitle {
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
+    font-size: 1.4rem;
+  }
+  .projectDescription {
+    @include size(auto, 95%);
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+  }
+}
+@media (max-height: 570px) {
+  .projectDescription {
+    display: none;
+  }
+}
 @media (max-width: 576px) {
   #showTitle {
     font-size: 2.25rem;

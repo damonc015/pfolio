@@ -53,13 +53,12 @@ a {
 #aboutContainer {
   @include size(100vh, 100vw);
   @include flex(flex-start, center, column);
-  border: 1px solid red;
   padding: 3rem;
+  overflow: hidden;
 }
 #showcaseContainer {
   @include size(auto, 100vw);
   @include flex(flex-start, center, column);
-  border: 1px solid $mainColor;
   gap: 2rem;
   padding: 3rem;
 }
@@ -70,10 +69,9 @@ a {
   overflow: hidden;
   padding: 3rem;
   gap: 1rem;
-  border: 1px solid red;
 }
-.overlay{
-  @include size(auto,auto)
+.overlay {
+  @include size(auto, auto);
 }
 
 @keyframes heat {
@@ -85,6 +83,10 @@ a {
   }
 }
 @media (max-width: 768px) {
+  #aboutContainer {
+    @include size(auto, 100%);
+    padding: 3rem 1.5rem;
+  }
   #showcaseContainer {
     padding: 3rem 1.5rem;
   }

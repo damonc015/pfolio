@@ -47,7 +47,7 @@ path {
   bottom: 20%;
   z-index: 50;
   gap: 10rem;
-  padding-right: 5rem
+  padding-right: 5rem;
 }
 .taxiWrap {
   @include size(auto, auto);
@@ -55,7 +55,7 @@ path {
 }
 #taxiText {
   @include flex(center, center, column);
-  @include transition(0.2s);
+  @include transition(0.1s);
   gap: 0.75rem;
   position: absolute;
   bottom: 7%;
@@ -144,6 +144,12 @@ $taxis: "about", "showcase", "contact";
   }
   .taxiContainer {
     gap: 5rem;
+  }
+  #taxiText {
+    bottom: 3%;
+  }
+  #taxiTextHead{
+    font-size: 1.75rem;
   }
 }
 @media (max-width: 576px) {

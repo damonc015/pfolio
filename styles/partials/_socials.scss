@@ -1,19 +1,20 @@
 @import "../../util/variables";
 
+.socialIconContainerWrapper {
+  @include size(inherit, inherit);
+  opacity: 0;
+}
+
 .socialContainer {
   @include flex(center, center, column);
-  @include size(auto, 10vw);
+  @include size(auto, 2rem);
   @include transition(0.3s);
   position: fixed;
   font-family: $titlefont;
   right: 4rem;
   bottom: 2rem;
   z-index: 10000;
-}
-
-.socialIconContainerWrapper {
-  @include size(inherit, inherit);
-  opacity: 0;
+  overflow: visible;
 }
 
 $social_icons: "A", "B", "C", "D", "E";
@@ -29,13 +30,6 @@ $social_icons: "A", "B", "C", "D", "E";
   }
 }
 @each $social_icon in $social_icons {
-  .socialIconIcon#{$social_icon} {
-    @include flex(center, center, row);
-    @include size(100%, 15%);
-    @include transition(0.4s);
-  }
-}
-@each $social_icon in $social_icons {
   .socialIconHeader#{$social_icon} {
     @include flex(center, center, row);
     @include size(100%, auto);
@@ -43,40 +37,48 @@ $social_icons: "A", "B", "C", "D", "E";
     padding-right: 0.5rem;
   }
 }
+@each $social_icon in $social_icons {
+  .socialIconIcon#{$social_icon} {
+    @include flex(center, center, row);
+    @include size(100%, 2.5rem);
+    @include transition(0.4s);
+  }
+}
+
 
 @media (max-width: 992px) {
   .socialContainer {
-    right: 3rem;
+    right: 3.5rem;
     bottom: 1.8rem;
   }
   @each $social_icon in $social_icons {
     .socialIconIcon#{$social_icon} {
       @include flex(center, center, row);
-      @include size(100%, 21%);
+      @include size(100%, 2.5rem);
     }
   }
 }
 @media (max-width: 768px) {
   .socialContainer {
-    right: 2.2rem;
+    right: 3rem;
     bottom: 1.4rem;
   }
   @each $social_icon in $social_icons {
     .socialIconIcon#{$social_icon} {
       @include flex(center, center, row);
-      @include size(100%, 27%);
+      @include size(100%, 2.25rem);
     }
   }
 }
 @media (max-width: 576px) {
   .socialContainer {
-    right: 1.7rem;
+    right: 2rem;
     bottom: 1.2rem;
   }
   @each $social_icon in $social_icons {
     .socialIconIcon#{$social_icon} {
       @include flex(center, center, row);
-      @include size(100%, 35%);
+      @include size(100%, 1.5rem);
     }
   }
 }
