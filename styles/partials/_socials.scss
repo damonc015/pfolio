@@ -24,9 +24,6 @@ $social_icons: "A", "B", "C", "D", "E";
     @include size(3rem, 100%);
     @include transition(0.3s);
     position: relative;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 @each $social_icon in $social_icons {
@@ -42,9 +39,11 @@ $social_icons: "A", "B", "C", "D", "E";
     @include flex(center, center, row);
     @include size(100%, 2.5rem);
     @include transition(0.4s);
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
-
 
 @media (max-width: 992px) {
   .socialContainer {

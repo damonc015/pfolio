@@ -178,10 +178,6 @@ nav li:hover {
   position: relative;
 }
 
-.socialIconContainerA:hover {
-  cursor: pointer;
-}
-
 .socialIconContainerB {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,10 +197,6 @@ nav li:hover {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   position: relative;
-}
-
-.socialIconContainerB:hover {
-  cursor: pointer;
 }
 
 .socialIconContainerC {
@@ -228,10 +220,6 @@ nav li:hover {
   position: relative;
 }
 
-.socialIconContainerC:hover {
-  cursor: pointer;
-}
-
 .socialIconContainerD {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -253,10 +241,6 @@ nav li:hover {
   position: relative;
 }
 
-.socialIconContainerD:hover {
-  cursor: pointer;
-}
-
 .socialIconContainerE {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -276,10 +260,6 @@ nav li:hover {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   position: relative;
-}
-
-.socialIconContainerE:hover {
-  cursor: pointer;
 }
 
 .socialIconHeaderA {
@@ -402,6 +382,10 @@ nav li:hover {
   transition: all 0.4s ease-out;
 }
 
+.socialIconIconA:hover {
+  cursor: pointer;
+}
+
 .socialIconIconB {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -420,6 +404,10 @@ nav li:hover {
   width: 2.5rem;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+}
+
+.socialIconIconB:hover {
+  cursor: pointer;
 }
 
 .socialIconIconC {
@@ -442,6 +430,10 @@ nav li:hover {
   transition: all 0.4s ease-out;
 }
 
+.socialIconIconC:hover {
+  cursor: pointer;
+}
+
 .socialIconIconD {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,6 +454,10 @@ nav li:hover {
   transition: all 0.4s ease-out;
 }
 
+.socialIconIconD:hover {
+  cursor: pointer;
+}
+
 .socialIconIconE {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -480,6 +476,10 @@ nav li:hover {
   width: 2.5rem;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+}
+
+.socialIconIconE:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {

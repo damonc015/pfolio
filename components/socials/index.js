@@ -21,7 +21,7 @@ const Index = () => {
         stagger: { each: 0.25 },
         ease: "Back.easeOut",
       },
-      8
+      5
     );
   }, []);
 
