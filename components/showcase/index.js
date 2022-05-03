@@ -46,7 +46,7 @@ const Showcase = forwardRef((props, ref) => {
           opacity: 1,
           stagger: 0.4,
         },
-        2
+        1.5
       );
 
     showcaseShadow.current = gsap
@@ -64,7 +64,7 @@ const Showcase = forwardRef((props, ref) => {
           x: "25%",
         },
         { duration: 120, x: "-25%", repeat: -1, ease: "Power0.easeOut" },
-        2
+        1.5
       );
   }, []);
 

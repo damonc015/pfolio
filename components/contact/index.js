@@ -66,13 +66,13 @@ const Contact = forwardRef((props, ref) => {
         a("#formIntro"),
         { yPercent: 40 },
         { duration: 1, yPercent: 0, opacity: 1 },
-        2
+        1.5
       )
       .fromTo(
         a(".formContainer"),
         { yPercent: 40 },
         { duration: 1.3, yPercent: 0, opacity: 1 },
-        2.25
+        1.5
       )
       .fromTo(
         a(".formLabels"),
@@ -84,7 +84,7 @@ const Contact = forwardRef((props, ref) => {
           stagger: 0.75,
           ease: "Back.easeOut",
         },
-        3
+        2.25
       );
 
     contactShadow.current = gsap
@@ -102,7 +102,7 @@ const Contact = forwardRef((props, ref) => {
           x: "25%",
         },
         { duration: 120, x: "-25%", repeat: -1, ease: "Power0.easeOut" },
-        2
+        1.5
       );
   }, [status]);
 
