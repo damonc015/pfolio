@@ -77,14 +77,14 @@ const Showcase = forwardRef((props, ref) => {
         </div>
         <div className="projectWrapper">
           <Project
-            img="/s"
+            img="/images/stockPreview.png"
             title="Stock Alerter"
             links={[
-              "https://github.com/damonc015/stockChecker",
-              "/",
+              "https://github.com/damonc015/stockalerterv2",
+              "https://stockalerter.vercel.app/",
               "https://blogsprite.vercel.app/tech/stock_alerter",
             ]}
-            desc=""
+            desc="A web application helping users track price action on selected stock tickers. Created using NextJS, Finnhub Websocket, Financial Modeling Prep Stock Data API, Market Aux API, and ChartJS. "
           />
         </div>
         <div className="projectWrapper">
@@ -93,10 +93,10 @@ const Showcase = forwardRef((props, ref) => {
             title="Pick a Bite"
             links={[
               "https://github.com/damonc015/pickabite",
-              "/",
+              "https://pickabite.netlify.app/",
               "https://blogsprite.vercel.app/tech/pickabite",
             ]}
-            desc="A web application that helps you pick out your next meal when you're not sure what to eat. Created using NextJS, Google's Map Api and Places Library, and SwiperJS."
+            desc="A web application that helps users pick out their next meal when they're not sure what to eat. Created using NextJS, Google's Map Api and Places Library, and SwiperJS."
           />
         </div>
         <div className="projectWrapper">

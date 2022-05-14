@@ -224,7 +224,7 @@ $subContainerGap: 1.25rem;
 }
 @media (max-height: 820px) {
   #contactTitleContainer {
-    @include size(auto, 100%);
+    @include size(auto, 80%);
     margin-bottom: 0.5rem;
   }
   #formIntro {

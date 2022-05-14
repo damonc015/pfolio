@@ -10,7 +10,7 @@ const Project = (props) => {
   return (
     <div className="projectContainer">
       <div className="projectTitleContainer">
-        <Link href={links[0]} passHref>
+        <Link href={links[1]} passHref>
           <a className="projectOverlayLink" target="_blank"></a>
         </Link>
         <div className="projectTitleHead">

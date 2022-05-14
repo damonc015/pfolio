@@ -35,9 +35,14 @@ const Index = () => {
           id="A"
         />
       </div>
-      {/* <div className="socialIconContainerWrapper">
-        <Socialitem title={"Resume"} symbol={<IoIosPaper />} id={"B"} />
-      </div> */}
+      <div className="socialIconContainerWrapper">
+        <Socialitem
+          title={"Resume"}
+          link={"/portfolioresume.pdf"}
+          symbol={<IoIosPaper />}
+          id={"B"}
+        />
+      </div>
       <div className="socialIconContainerWrapper">
         <Socialitem
           title="Blog"
@@ -46,7 +51,7 @@ const Index = () => {
           id="C"
         />
       </div>
-      
+
       <div className="socialIconContainerWrapper">
         <Socialitem title={"Email"} symbol={<AiOutlineMail />} id={"D"} />
       </div>
