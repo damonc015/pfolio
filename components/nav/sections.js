@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const Sections = (props) => {
-  const { setNav, setActiveIcon } = props;
+  const { setNav, setActiveIcon, firstTime, setFirstTime } = props;
 
   return (
     <ul>
@@ -10,6 +10,9 @@ const Sections = (props) => {
         onClick={() => {
           setNav((prev) => !prev);
           setActiveIcon("home");
+          if (firstTime) {
+            setFirstTime(false);
+          }
         }}
       >
         Home
@@ -18,6 +21,9 @@ const Sections = (props) => {
         onClick={() => {
           setNav((prev) => !prev);
           setActiveIcon("about");
+          if (firstTime) {
+            setFirstTime(false);
+          }
         }}
       >
         About
@@ -26,6 +32,9 @@ const Sections = (props) => {
         onClick={() => {
           setNav((prev) => !prev);
           setActiveIcon("showcase");
+          if (firstTime) {
+            setFirstTime(false);
+          }
         }}
       >
         Showcase
@@ -34,6 +43,9 @@ const Sections = (props) => {
         onClick={() => {
           setNav((prev) => !prev);
           setActiveIcon("contact");
+          if (firstTime) {
+            setFirstTime(false);
+          }
         }}
       >
         Contact

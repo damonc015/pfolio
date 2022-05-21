@@ -84,7 +84,7 @@ const Showcase = forwardRef((props, ref) => {
               "https://stockalerter.vercel.app/",
               "https://blogsprite.vercel.app/tech/stock_alerter",
             ]}
-            desc="A web application helping users track price action on selected stock tickers. Created using NextJS, Finnhub Websocket, Financial Modeling Prep Stock Data API, Market Aux API, and ChartJS. "
+            desc="A web application helping users track price action on selected stock tickers. Created using NextJS, Finnhub's Websocket, NextAuth, and ChartJS. (Username: stockalerter, Password: portfoliodamon123)"
           />
         </div>
         <div className="projectWrapper">
@@ -115,5 +115,5 @@ const Showcase = forwardRef((props, ref) => {
     </div>
   );
 });
-Showcase.displayName = "Showcase"
+Showcase.displayName = "Showcase";
 export default Showcase;

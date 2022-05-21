@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useContext } from "react";
-import Logo from "../Logo";
 import Sections from "./sections";
 import { BiMenuAltLeft, BiMenuAltRight } from "react-icons/bi";
 import { gsap } from "../../util/gsap";
@@ -7,7 +6,8 @@ import RoadContext from "../../util/roadmapProvider";
 
 const Index = () => {
   const [showNav, setShowNav] = useState(false);
-  const {activeIcon, setActiveIcon} = useContext(RoadContext);
+  const { activeIcon, setActiveIcon, firstTime, setFirstTime } =
+    useContext(RoadContext);
   const navTime = useRef();
 
   useEffect(() => {
@@ -25,7 +25,12 @@ const Index = () => {
     <nav>
       {showNav ? (
         <div className="showNav">
-          <Sections setNav={setShowNav} setActiveIcon={setActiveIcon} />
+          <Sections
+            setNav={setShowNav}
+            setActiveIcon={setActiveIcon}
+            firstTime={firstTime}
+            setFirstTime={setFirstTime}
+          />
           <span
             className="menuIcon"
             onClick={() => setShowNav((prev) => !prev)}
