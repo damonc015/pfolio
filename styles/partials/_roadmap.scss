@@ -1,12 +1,14 @@
 @import "../../util/variables";
 
 #roadmap {
-  @include size(auto, auto);
+  @include size(60%, auto);
   @include flex(space-around, center, column);
   position: fixed;
   z-index: 10000;
-  top: 30%;
+  top: 0;
+  bottom:0;
   left: 2.5rem;
+  margin: auto;
   gap: 3rem;
   &::after {
     content: "";
@@ -22,8 +24,9 @@ $roadmap_icons: "home", "about", "showcase", "contact";
 @each $roadmap_icon in $roadmap_icons {
   .roadmapIcon#{$roadmap_icon} {
     @include flex(center, center, row);
-    @include size(4.5rem, 4.5rem);
+    @include size(4rem, 4rem);
     @include transition(0.3s);
+    flex-shrink: 0;
     position: relative;
     color: $textColor;
     border-radius: 50%;
